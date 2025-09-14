@@ -1,0 +1,52 @@
+As a project manager, I want to create user accounts so that team members can access the project management system.
+Priority: High
+Story Points: 5
+
+Acceptance Criteria:
+- Users can register with email and password
+- Email verification is required
+- Password must meet security requirements
+- Users receive welcome email upon registration
+
+As a developer, I want to view project dashboards so that I can track progress and identify bottlenecks.
+Priority: High
+Story Points: 8
+
+Acceptance Criteria:
+Given I am logged in as a developer
+When I navigate to the dashboard
+Then I should see project progress charts
+And I should see task assignments
+And I should see upcoming deadlines
+
+As a team lead, I want to assign tasks to team members so that work can be distributed effectively.
+Priority: Medium
+Story Points: 3
+
+Acceptance Criteria:
+- Task assignment interface is available
+- Team members receive notifications when assigned tasks
+- Tasks show due dates and priority levels
+- Assignment history is tracked
+
+As a stakeholder, I want to generate progress reports so that I can communicate status to executives.
+Priority: Medium
+Story Points: 5
+
+Acceptance Criteria:
+Given I have stakeholder permissions
+When I request a progress report
+Then the system generates a PDF report
+And the report includes project metrics
+And the report shows completion percentages
+
+As a quality assurance tester, I want to log defects so that issues can be tracked and resolved.
+Priority: High
+Story Points: 6
+
+Acceptance Criteria:
+- Defect logging form captures all required fields
+- Screenshots can be attached to defects
+- Defects are automatically assigned to developers
+- Email notifications are sent for new defects
+- Defect status can be updated throughout lifecycle
