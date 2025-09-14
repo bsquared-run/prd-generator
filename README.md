@@ -44,6 +44,9 @@ A sleek GUI application that parses user stories and generates comprehensive Pro
 
 6. **Export**: Use "Export as PDF" or "Export as Text" to save your PRD
 
+<img width="1288" height="1114" alt="image" src="https://github.com/user-attachments/assets/0244c306-ca5d-4c73-b864-67c24663d67b" />
+
+
 ## User Story Format Examples
 
 ### Gherkin Format
