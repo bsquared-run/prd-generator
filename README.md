@@ -91,6 +91,8 @@ python test_mcp.py
 
 ## 📝 Usage Examples
 
+<img width="1736" height="1154" alt="image" src="https://github.com/user-attachments/assets/4170ee6c-10f6-4173-a7e2-da5fa76b54b9" />
+
 ### Basic Workflow
 1. **Enter User Stories**: Input stories in Gherkin or free-form format
 2. **Parse Stories**: Extract structured data and metadata
