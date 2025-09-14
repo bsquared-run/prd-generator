@@ -1,49 +1,112 @@
-# PRD Generator
+# PRD Generator - AI-Enhanced Product Requirements Document Creator
 
-A sleek GUI application that parses user stories and generates comprehensive Product Requirements Documents (PRDs).
+A comprehensive system for creating professional Product Requirements Documents (PRDs) from user stories, now enhanced with AI-powered capabilities and Atlassian integration.
 
-## Features
+## 🚀 Features
 
+### Core PRD Generator
 - **Modern GUI**: Clean, dark-themed interface built with CustomTkinter
-- **User Story Parsing**: Supports multiple formats including Gherkin syntax
-- **Automatic PRD Generation**: Creates structured PRDs with standard sections
-- **Export Options**: Export to PDF and text formats
-- **Project Information**: Capture project metadata and author details
-- **File Loading**: Load user stories from text files
+- **Advanced User Story Parsing**: Supports Gherkin syntax, acceptance criteria, priorities
+- **Professional PRD Generation**: Industry-standard 8-section PRD structure
+- **Multiple Export Formats**: PDF and text export capabilities
+- **Template System**: Customizable PRD templates
 
-## Installation
+### 🤖 AI Enhancement (MCP Integration)
+- **Intelligent Story Analysis**: AI-powered quality scoring (0-100 scale)
+- **Contextual Best Practices**: Domain-specific guidance (fintech, healthcare, e-commerce, etc.)
+- **Story Improvement Suggestions**: AI-generated enhancement recommendations
+- **PRD Validation**: Completeness checking against industry standards
+- **Jira/Confluence Integration**: Direct import from Atlassian tools
 
-1. Ensure Python 3.7+ is installed on your system
-2. Install required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+## 📁 Project Structure
 
-## Usage
+```
+PRDGenerator/
+├── prd_generator.py              # Core application (22KB)
+├── enhanced_prd_generator.py     # AI-enhanced GUI (32KB)
+├── requirements.txt              # Core dependencies
+├── sample_user_stories.txt       # Example data
+├── simple_test.py               # Basic functionality test
+├── demo_simple.py               # Demo script
+├── mcp-server/                  # MCP (Model Context Protocol) Server
+│   ├── server.py                # MCP server implementation (28KB)
+│   ├── prd_mcp_client.py        # Client integration library (11KB)
+│   ├── test_mcp.py              # MCP test suite (8KB)
+│   └── requirements.txt         # MCP dependencies
+├── docs/                        # Documentation
+│   ├── MCP_README.md           # MCP server documentation
+│   ├── INTEGRATION_GUIDE.md    # Integration guide
+│   └── DEVELOPMENT.md          # Development process documentation
+├── examples/                    # Usage examples
+└── LICENSE                     # MIT License
+```
 
-1. Run the application:
-   ```
-   python prd_generator.py
-   ```
+## 🎯 Quick Start
 
-2. **Input User Stories**: Enter your user stories in the left panel. The application supports:
-   - **Gherkin Format**: "As a [user], I want [functionality] so that [benefit]"
-   - **Free-form text**: Any descriptive text
-   - **Acceptance Criteria**: Use "Acceptance Criteria:" or "AC:" labels
-   - **Priority**: Use "Priority:" or "Prio:" labels (High/Medium/Low)
-   - **Story Points**: Use "Story Points:" or "SP:" labels
+### Option 1: Basic PRD Generator
+```bash
+# Install dependencies
+pip install -r requirements.txt
 
-3. **Project Information**: Fill in project details (title, author, target release)
+# Run the application
+python prd_generator.py
+```
 
-4. **Parse Stories**: Click "Parse User Stories" to process your input
+### Option 2: AI-Enhanced Version
+```bash
+# Install core dependencies
+pip install -r requirements.txt
 
-5. **Generate PRD**: Click "Generate PRD" to create the document
+# Install MCP dependencies
+pip install -r mcp-server/requirements.txt
 
-6. **Export**: Use "Export as PDF" or "Export as Text" to save your PRD
+# Run enhanced application
+python enhanced_prd_generator.py
+```
 
-## User Story Format Examples
+## 🤖 MCP Server (AI Enhancement)
 
-### Gherkin Format
+The MCP (Model Context Protocol) server provides AI-powered enhancements:
+
+### Available Tools
+1. **`fetch_jira_stories`** - Import stories from Jira projects
+2. **`analyze_user_story`** - AI quality assessment and scoring
+3. **`improve_user_stories`** - Generate improvement suggestions
+4. **`get_best_practices`** - Contextual writing guidance
+5. **`enhance_prd_content`** - AI-powered PRD enhancement
+6. **`validate_prd_completeness`** - Industry standard validation
+7. **`fetch_confluence_requirements`** - Extract requirements from Confluence
+
+### Start MCP Server
+```bash
+cd mcp-server
+python server.py
+```
+
+### Test MCP Integration
+```bash
+cd mcp-server
+python test_mcp.py
+```
+
+## 📝 Usage Examples
+
+### Basic Workflow
+1. **Enter User Stories**: Input stories in Gherkin or free-form format
+2. **Parse Stories**: Extract structured data and metadata
+3. **Generate PRD**: Create professional documentation
+4. **Export**: Save as PDF or text
+
+### Enhanced AI Workflow
+1. **Import from Jira**: Connect and bulk import stories
+2. **AI Analysis**: Get quality scores and improvement suggestions
+3. **Apply Best Practices**: Use domain-specific guidance
+4. **Generate Enhanced PRD**: AI-validated professional output
+5. **Validate & Export**: Quality-assured final documentation
+
+### Sample User Story Formats
+
+#### Gherkin Format
 ```
 As a project manager, I want to create user accounts so that team members can access the system.
 Priority: High
@@ -55,10 +118,8 @@ Acceptance Criteria:
 - Password must meet security requirements
 ```
 
-### BDD Format
+#### BDD Format
 ```
-User Authentication Feature
-
 Given I am on the login page
 When I enter valid credentials
 Then I should be logged into the system
@@ -67,66 +128,166 @@ And I should see the dashboard
 Priority: High
 ```
 
-### Simple Format
+## 🔗 Integrations
+
+### Jira Integration
+- **Project Import**: Bulk import stories using JQL queries
+- **Metadata Preservation**: Maintains priorities, story points, labels
+- **Custom Fields**: Supports Jira custom field mapping
+- **Authentication**: Secure API token-based authentication
+
+### Confluence Integration
+- **Requirements Extraction**: Pull requirements from documentation
+- **Page Content Analysis**: Process structured and unstructured content
+- **Space-level Import**: Import from entire Confluence spaces
+- **Content Filtering**: Query-based page selection
+
+### AI Assistant Integration
+- **MCP Protocol**: Standard integration with AI assistants
+- **Claude Code Compatible**: Seamless integration with Claude Code
+- **Tool Chaining**: Combine multiple AI operations
+- **Context Preservation**: Maintain conversation context
+
+## 🏗️ Architecture
+
+### Core Application
 ```
-The system should allow users to reset their passwords via email.
-
-Acceptance Criteria:
-- Password reset link expires after 24 hours
-- Users receive email with reset instructions
-- New password must meet security policy
-```
-
-## Generated PRD Sections
-
-The application generates PRDs with the following sections:
-
-1. **Project Information** - Basic project metadata
-2. **Executive Summary** - High-level project overview
-3. **Product Overview** - Vision and value proposition
-4. **User Stories and Requirements** - Detailed story breakdown
-5. **Functional Requirements** - System functionality requirements
-6. **Acceptance Criteria** - Testable conditions for each story
-7. **Assumptions and Constraints** - Project assumptions
-8. **Success Metrics** - Measurement criteria
-
-## File Structure
-
-```
-PRDGenerator/
-├── prd_generator.py      # Main application file
-├── requirements.txt      # Python dependencies
-├── sample_user_stories.txt # Example user stories
-└── README.md            # This file
+User Input → Story Parser → PRD Generator → Export Engine
 ```
 
-## Dependencies
+### AI-Enhanced System
+```
+Jira/Confluence → AI Analysis → Enhanced Parser → Smart PRD Generator → Validated Export
+      ↑              ↑               ↑                    ↑                  ↑
+   MCP Tools    Quality Scoring   Best Practices    AI Enhancement    Quality Validation
+```
 
-- **customtkinter**: Modern GUI framework for Python
-- **reportlab**: PDF generation library
+## 📊 Quality Metrics
 
-## Sample Data
+### Story Quality Assessment
+- **Format Compliance**: Gherkin/BDD structure adherence (30 points)
+- **Acceptance Criteria**: Presence and quality of testable conditions (25 points)
+- **Clarity & Specificity**: Clear, unambiguous language (20 points)
+- **Business Value**: Clear value proposition and benefits (15 points)
+- **Testability**: Measurable success criteria (10 points)
 
-Load `sample_user_stories.txt` to see example user stories and test the application functionality.
+### PRD Completeness Standards
+- **Agile Standard**: Product Vision, User Stories, Acceptance Criteria, Success Metrics
+- **Enterprise Standard**: Executive Summary, Business Requirements, Risk Assessment
+- **Custom Standards**: Configurable validation rules
 
-## Tips for Best Results
+## 🎨 Screenshots & Demo
 
-1. **Separate Stories**: Use blank lines to separate different user stories
-2. **Include Acceptance Criteria**: Add specific, testable conditions
-3. **Set Priorities**: Use High/Medium/Low to help with planning
-4. **Add Story Points**: Include estimation for development planning
-5. **Be Specific**: Clear, detailed stories generate better PRDs
+### Core Application Interface
+- Clean, modern dark-themed GUI
+- Two-panel layout (input/output)
+- Real-time parsing feedback
+- Export options (PDF/Text)
 
-## Troubleshooting
+### Enhanced AI Interface
+- Tabbed workflow organization
+- AI analysis dashboard
+- Best practices sidebar
+- Integration management panel
 
-- **Import Errors**: Ensure all dependencies are installed via `pip install -r requirements.txt`
-- **GUI Issues**: Make sure you're running Python 3.7+ with tkinter support
-- **PDF Export Problems**: Verify reportlab is properly installed
+## 🔧 Development
 
-## Contributing
+### Core Dependencies
+- **CustomTkinter**: Modern GUI framework
+- **ReportLab**: Professional PDF generation
+- **Python 3.7+**: Core runtime
 
-Feel free to enhance the application by:
-- Adding new export formats
-- Improving parsing algorithms
-- Extending PRD templates
-- Adding validation features
+### MCP Dependencies
+- **MCP Protocol**: Model Context Protocol implementation
+- **Requests**: HTTP client for API integration
+- **Asyncio**: Asynchronous operation support
+
+### Testing
+```bash
+# Test core functionality
+python simple_test.py
+
+# Test MCP integration
+cd mcp-server && python test_mcp.py
+
+# Run demo
+python demo_simple.py
+```
+
+## 🌟 Industry Applications
+
+### Fintech
+- Compliance requirement tracking
+- Security and audit trail specifications
+- Regulatory adherence validation
+- Multi-currency considerations
+
+### Healthcare
+- HIPAA compliance integration
+- Patient privacy requirements
+- Clinical workflow specifications
+- Accessibility considerations
+
+### E-commerce
+- Payment processing requirements
+- Inventory management integration
+- Multi-platform consistency
+- User account management
+
+### SaaS
+- Multi-tenant architecture considerations
+- Subscription and billing requirements
+- User role and permission management
+- Scalability specifications
+
+## 📈 Roadmap
+
+### Current Version (v1.0)
+- ✅ Core PRD generation
+- ✅ User story parsing
+- ✅ PDF/Text export
+- ✅ MCP server integration
+- ✅ Jira/Confluence connectivity
+
+### Next Release (v1.1)
+- 🔄 Enhanced NLP analysis
+- 🔄 Additional export formats
+- 🔄 Template customization
+- 🔄 Batch processing improvements
+
+### Future Vision (v2.0)
+- 🎯 Predictive story complexity analysis
+- 🎯 Automated test case generation
+- 🎯 Multi-language support
+- 🎯 Advanced analytics dashboard
+
+## 🤝 Contributing
+
+We welcome contributions! Key areas for development:
+
+1. **New Integrations**: Azure DevOps, GitHub, GitLab
+2. **Enhanced AI**: Improved analysis algorithms
+3. **UI/UX**: Interface enhancements and themes
+4. **Export Formats**: Word, Confluence, etc.
+5. **Templates**: Industry-specific PRD templates
+
+## 📄 License
+
+MIT License - See [LICENSE](LICENSE) file for details.
+
+## 🔗 Links
+
+- **Repository**: https://github.com/bsquared-run/prd-generator
+- **Issues**: https://github.com/bsquared-run/prd-generator/issues
+- **Documentation**: [docs/](docs/)
+- **Examples**: [examples/](examples/)
+
+## 🙏 Acknowledgments
+
+- **Research Foundation**: Atlassian, ProductPlan, and Wikipedia PRD standards
+- **AI Enhancement**: Built with Claude Code integration in mind
+- **Community**: Open source contributors and product management community
+
+---
+
+**Transform your user stories into professional Product Requirements Documents with AI-powered intelligence and seamless development tool integration.**
