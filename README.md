@@ -11,6 +11,9 @@ A sleek GUI application that parses user stories and generates comprehensive Pro
 - **Project Information**: Capture project metadata and author details
 - **File Loading**: Load user stories from text files
 
+- <img width="1743" height="1163" alt="image" src="https://github.com/user-attachments/assets/fa457aa9-9206-4256-a050-7fd9ebf8b939" />
+
+
 ## Installation
 
 1. Ensure Python 3.7+ is installed on your system
